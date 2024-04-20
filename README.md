@@ -5,6 +5,11 @@
 
 **Descrição:**
     API para consultar e gerar *Quest*s (missões) para um jogo *MMORPG* baseado no sistema de RPG [Dungeons & Dragons](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons) com informações hosteadas na API pública [`api.open5e.com`](https://open5e.com).
+    
+## Exemplo
+Use o Scratch Pad do [Insmonia](https://insomnia.rest/) disponível [aqui](insomnia_example.json) para testar a API.
+
+![Scratch Pad > Import](img/insomnia_import.png)
 
 ## Rotas
 
