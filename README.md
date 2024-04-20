@@ -21,7 +21,7 @@ Lista todas as quests armazenadas na API de acordo com os filtros. Caso algum fi
 |---|---|---|
 |challengeRating|Filtrar por nível de desafio|`int`|
 |nMonsters|Filtrar por número de monstros|`int`|
-|rewardRarity|Filtrar por raridade da recompensa|`"common"` \| `"uncommon"` \| `"rare"` \| `"Very Rare"` \| `"legendary"` |
+|rewardRarity|Filtrar por raridade da recompensa|`"common"` \| `"uncommon"` \| `"rare"` \| `"Very Rare"` \| `"Legendary"` |
 
 
 ### <span style="color:orangered;">`POST`</span> `/newQuest`
@@ -39,7 +39,7 @@ Gera uma quest aleatória com base nos parâmetros desejados e a armazena na API
   "nMonsters": 0,
 
   // raridade da recompensa
-  "rewardRarity": "common" | "uncommon" | "rare" | "Very Rare" | "legendary" 
+  "rewardRarity": "common" | "uncommon" | "rare" | "Very Rare" | "Legendary" 
 }
 ```
 
@@ -64,7 +64,7 @@ Todas as rotas retornam uma [Quest](src/main/java/br/net/kauan/produto/models/Qu
       "name": "string",
       "type": "string",
       "desc": "string",
-      "rarity": "common" | "uncommon" | "rare" | "Very Rare" | "legendary"
+      "rarity": "common" | "uncommon" | "rare" | "Very Rare" | "Legendary"
     },
     "challengeRating": 0 // soma do cr de todos os monstros do mob
   },
