@@ -12,11 +12,11 @@
 
 **Descrição:**
 Lista todas as quests armazenadas na API de acordo com os filtros. Caso algum filtro não seja especificado, este é desconsiderado e todos os resultados para o parâmetro filtrado são retornados. Consulte [aqui](#resposta) para o tipo de resposta do request.
-|parâmetro|descrição|
-|---|---|
-|challengeRating|Filtrar por nível de desafio|
-|rewardRarity|Filtrar por raridade da recompensa|
-|nMonsters|Filtrar por número de monstros|
+|parâmetro|descrição|tipo|
+|---|---|---|
+|challengeRating|Filtrar por nível de desafio|`int`|
+|nMonsters|Filtrar por número de monstros|`int`|
+|rewardRarity|Filtrar por raridade da recompensa|`"common"` \| `"uncommon"` \| `"rare"` \| `"Very Rare"` \| `"legendary"` |
 
 
 ### <span style="color:orangered;">`POST`</span> `/newQuest`
@@ -27,9 +27,14 @@ Gera uma quest aleatória com base nos parâmetros desejados e a armazena na API
 **Body:**
 ```jsonc
 {
-  "challengeRating": 0,       // dificuldade do desafio
-  "nMonsters": 0,             // número de monstros 
-  "rewardRarity": "string"    // raridade da recompensa
+  // dificuldade do desafio
+  "challengeRating": 0,
+
+  // número de monstros
+  "nMonsters": 0,
+
+  // raridade da recompensa
+  "rewardRarity": "common" | "uncommon" | "rare" | "Very Rare" | "legendary" 
 }
 ```
 
@@ -54,7 +59,7 @@ Todas as rotas retornam uma [Quest](src/main/java/br/net/venson/produto/models/Q
       "name": "string",
       "type": "string",
       "desc": "string",
-      "rarity": "string"
+      "rarity": "common" | "uncommon" | "rare" | "Very Rare" | "legendary"
     },
     "challengeRating": 0 // soma do cr de todos os monstros do mob
   },
