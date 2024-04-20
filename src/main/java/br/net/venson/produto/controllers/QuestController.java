@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Optional;
 
 @RestController
@@ -52,5 +53,15 @@ public class QuestController {
         quests.add(quest);
 
         return ResponseEntity.status(200).body(quest);
+    }
+
+    @GetMapping("/ajuda")
+    public ResponseEntity<HashMap<String, Object>> ajuda() {
+        return ResponseEntity.status(200).body(new HashMap<String, Object>() {
+            {
+                put("estudante", "Kauan Fontanela");
+                put("projeto", "Missões para um jogo MMORPG");
+            }
+        });
     }
 }
