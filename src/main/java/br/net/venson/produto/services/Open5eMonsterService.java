@@ -4,15 +4,12 @@ import java.util.Random;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClient;
 
 import br.net.venson.produto.models.Monster;
 import br.net.venson.produto.models.Open5eResponse;
 
 @Service
-public class Open5eMonsterService implements MonsterService {
-    private RestClient client = RestClient.create("https://api.open5e.com/");
-
+public class Open5eMonsterService implements Open5eService, MonsterService {
     @Override
     public Monster getRandomMonster(int challengeRating) {
         var monsters = getMonsters(challengeRating);
@@ -51,6 +48,7 @@ public class Open5eMonsterService implements MonsterService {
                         .build())
                 .retrieve()
                 .body(responseTypeRef);
+        // .body(Open5eService.responseType(Monster.class));
 
         if (res != null)
             return res.getResults();
