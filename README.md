@@ -27,9 +27,9 @@ Gera uma quest aleatória com base nos parâmetros desejados e a armazena na API
 **Body:**
 ```jsonc
 {
-	"challengeRating": 0,       // dificuldade do desafio
-	"nMonsters": 0,             // número de monstros 
-	"rewardRarity": "string"    // raridade da recompensa
+  "challengeRating": 0,       // dificuldade do desafio
+  "nMonsters": 0,             // número de monstros 
+  "rewardRarity": "string"    // raridade da recompensa
 }
 ```
 
