@@ -1,6 +1,6 @@
-package br.net.venson.produto.services;
+package br.net.kauan.produto.services;
 
-import br.net.venson.produto.models.MagicItem;
+import br.net.kauan.produto.models.MagicItem;
 
 public interface MagicItemService {
     /**

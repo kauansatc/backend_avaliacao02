@@ -39,7 +39,7 @@ Gera uma quest aleatória com base nos parâmetros desejados e a armazena na API
 ```
 
 ## Resposta
-Todas as rotas retornam uma [Quest](src/main/java/br/net/venson/produto/models/Quest.java) em formato JSON, conforme o corpo abaixo:
+Todas as rotas retornam uma [Quest](src/main/java/br/net/kauan/produto/models/Quest.java) em formato JSON, conforme o corpo abaixo:
 
 ```jsonc
 [

@@ -1,4 +1,4 @@
-package br.net.venson.produto.services;
+package br.net.kauan.produto.services;
 
 import org.springframework.web.client.RestClient;
 

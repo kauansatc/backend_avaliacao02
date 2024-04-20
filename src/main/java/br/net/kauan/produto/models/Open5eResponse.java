@@ -1,4 +1,4 @@
-package br.net.venson.produto.models;
+package br.net.kauan.produto.models;
 
 /**
  * Resposta de uma requisição à API Open5e

@@ -1,6 +1,6 @@
-package br.net.venson.produto.services;
+package br.net.kauan.produto.services;
 
-import br.net.venson.produto.models.Monster;
+import br.net.kauan.produto.models.Monster;
 
 public interface MonsterService {
     /**

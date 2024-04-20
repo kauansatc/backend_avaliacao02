@@ -1,10 +1,10 @@
-package br.net.venson.produto.services;
+package br.net.kauan.produto.services;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 
-import br.net.venson.produto.models.MagicItem;
-import br.net.venson.produto.models.Open5eResponse;
+import br.net.kauan.produto.models.MagicItem;
+import br.net.kauan.produto.models.Open5eResponse;
 
 @Service
 public class Open5eMagicItemService implements Open5eService, MagicItemService {

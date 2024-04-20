@@ -1,4 +1,4 @@
-package br.net.venson.produto.models;
+package br.net.kauan.produto.models;
 
 public class Monster {
     private String name;

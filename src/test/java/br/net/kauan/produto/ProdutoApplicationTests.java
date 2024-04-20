@@ -1,4 +1,4 @@
-package br.net.venson.produto;
+package br.net.kauan.produto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

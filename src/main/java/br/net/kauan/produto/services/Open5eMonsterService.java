@@ -1,12 +1,12 @@
-package br.net.venson.produto.services;
+package br.net.kauan.produto.services;
 
 import java.util.Random;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 
-import br.net.venson.produto.models.Monster;
-import br.net.venson.produto.models.Open5eResponse;
+import br.net.kauan.produto.models.Monster;
+import br.net.kauan.produto.models.Open5eResponse;
 
 @Service
 public class Open5eMonsterService implements Open5eService, MonsterService {

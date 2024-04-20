@@ -1,4 +1,4 @@
-package br.net.venson.produto.models;
+package br.net.kauan.produto.models;
 
 /**
  * Missão que consiste em derrotar um grupo de monstros e obter um item mágico
