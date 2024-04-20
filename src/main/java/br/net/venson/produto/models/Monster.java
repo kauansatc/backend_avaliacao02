@@ -8,27 +8,32 @@ public class Monster {
     private String alignment;
     private double cr;
 
+    /** @return Nome do monstro */
     public String getName() {
         return name;
     }
 
+    /** @return Tamanho do monstro */
     public String getSize() {
         return size;
     }
 
+    /** @return Tipo do monstro */
     public String getType() {
         return type;
     }
 
+    /** @return Subtipo do monstro */
     public String getSubtype() {
         return subtype;
     }
 
+    /** @return Alinhamento do monstro */
     public String getAlignment() {
         return alignment;
     }
 
-    /** Challenge Rating */
+    /** @return Nível de Desafio do monstro */
     public double getCr() {
         return cr;
     }

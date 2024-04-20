@@ -6,18 +6,22 @@ public class MagicItem {
     private String desc;
     private String rarity;
 
+    /** @return Nome do item mágico */
     public String getName() {
         return name;
     }
 
+    /** @return Tipo do item mágico */
     public String getType() {
         return type;
     }
 
+    /** @return Descrição do item mágico */
     public String getDesc() {
         return desc;
     }
 
+    /** @return Raridade do item mágico */
     public String getRarity() {
         return rarity;
     }
