@@ -38,26 +38,26 @@ Todas as rotas retornam uma [Quest](src\main\java\br\net\venson\produto\models\Q
 
 ```jsonc
 [
-	{
-		"mob": [ // lista monstros
-			{
-				"name": "string",
-				"size": "string",
-				"type": "string",
-				"subtype": "string",
-				"alignment": "string",	
-				"cr": 0	// challenge rating (nível do desafio)
-			},
-			// [...]
-		],
-		"loot": {
-			"name": "string",
-			"type": "string",
-			"desc": "string",
-			"rarity": "string"
-		},
-		"challengeRating": 0 // soma do cr de todos os monstros do mob
-	},
-	// [...]
+  {
+    "mob": [ // lista monstros
+      {
+        "name": "string",
+        "size": "string",
+        "type": "string",
+        "subtype": "string",
+        "alignment": "string",	
+        "cr": 0	// challenge rating (nível do desafio)
+      },
+      // [...]
+    ],
+    "loot": {
+      "name": "string",
+      "type": "string",
+      "desc": "string",
+      "rarity": "string"
+    },
+    "challengeRating": 0 // soma do cr de todos os monstros do mob
+  },
+  // [...]  
 ]
 ```
