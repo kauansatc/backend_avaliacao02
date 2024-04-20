@@ -16,4 +16,12 @@ public class Quest {
     public MagicItem getLoot() {
         return loot;
     }
+
+    public int getChallengeRating() {
+        int cr = 0;
+        for (Monster monster : mob) {
+            cr += monster.getCr();
+        }
+        return cr;
+    }
 }

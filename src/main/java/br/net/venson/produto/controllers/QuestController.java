@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RestController
 public class QuestController {
@@ -16,30 +17,40 @@ public class QuestController {
     @Autowired
     private MagicItemService magicItemService = new Open5eMagicItemService();
 
-    private ArrayList<Quest> quests = new ArrayList<>() {
-        {
-            add(new Quest(
-                    monsterService.getRandomMob(12, 3),
-                    magicItemService.getRandomItem("uncommon")));
-        }
-    };
+    private ArrayList<Quest> quests = new ArrayList<>();
 
-    @GetMapping("/getQuests")
-    public ResponseEntity<ArrayList<Quest>> getRequests() {
-        return ResponseEntity.status(200).body(quests);
+    @GetMapping("/quests")
+    public ResponseEntity<ArrayList<Quest>> quests(@RequestParam Optional<Integer> challengeRating,
+            @RequestParam Optional<Integer> nMonsters, @RequestParam Optional<String> rewardRarity) {
+        var res = new ArrayList<Quest>();
+
+        for (var quest : this.quests) {
+            if (challengeRating.isPresent() && quest.getChallengeRating() != challengeRating.get()) {
+                continue;
+            }
+            if (nMonsters.isPresent() && quest.getMob().length != nMonsters.get()) {
+                continue;
+            }
+            if (rewardRarity.isPresent() && !quest.getLoot().getRarity().equals(rewardRarity.get())) {
+                continue;
+            }
+
+            res.add(quest);
+        }
+
+        return ResponseEntity.status(200).body(res);
     }
 
-    // @PostMapping("/postar")
-    // public ResponseEntity<Object> postar(@RequestBody Solicitacao solicitacao) {
-    // Endereco enderecoDestinatario =
-    // cepService.converteCep(solicitacao.getDestinatario());
-    // Endereco enderecoRemetente =
-    // cepService.converteCep(solicitacao.getRemetente());
-    // Postagem postagem = new Postagem(
-    // solicitacao.getProduto(),
-    // enderecoDestinatario,
-    // enderecoRemetente);
-    // listaDePostagems.add(postagem);
-    // return ResponseEntity.status(200).body(postagem);
-    // }
+    @PostMapping("/newQuest")
+    public ResponseEntity<Quest> generateNewQuest(@RequestBody GenerateQuestRequest req) {
+        var mob = monsterService.getRandomMob(
+                req.getChallengeRating(),
+                req.getnMonsters());
+        var loot = magicItemService.getRandomItem(req.getRewardRarity());
+
+        var quest = new Quest(mob, loot);
+        quests.add(quest);
+
+        return ResponseEntity.status(200).body(quest);
+    }
 }
